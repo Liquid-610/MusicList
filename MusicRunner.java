@@ -11,7 +11,8 @@ public class MusicRunner
     
     String[] data = mr.getSongData();
     
-    new Song () {s0, s1,s2,s3,s4,s5,s6,s7,s8,s9};
+    //Song song = new Song () {s0, s1,s2,s3,s4,s5,s6,s7,s8,s9};
+    ArrayList<MusicRunner> myArrayList = new ArrayList<MusicRunner>(10);
     
     for(int i = 0; i <= 10; i++)
     {
