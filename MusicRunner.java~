@@ -11,6 +11,14 @@ public class MusicRunner
     
     String[] data = mr.getSongData();
     
+    //Song song = new Song () {s0, s1,s2,s3,s4,s5,s6,s7,s8,s9};
+    ArrayList<MusicRunner> myArrayList = new ArrayList<MusicRunner>(10);
+    
+    for(int i = 0; i <= 10; i++)
+    {
+      System.out.println("{0}, {1}",s[i], s[i]);
+    }
+    
     // First line contains all the fields - We don't want to save this anywhere but we can
     // print it for now to see what information we have.
     System.out.println(Arrays.toString(data));
