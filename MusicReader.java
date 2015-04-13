@@ -5,7 +5,7 @@ import java.io.IOException;
  
 public class MusicReader {
  
-  private BufferedReader br;
+  private BufferedReader buff;
   
   public MusicReader ()
   {
@@ -16,7 +16,7 @@ public class MusicReader {
   {
     try 
     {
-    br = new BufferedReader(new FileReader(filename));
+    buff = new BufferedReader(new FileReader(filename));
     }
     catch (java.io.IOException e) 
     {
@@ -27,8 +27,8 @@ public class MusicReader {
   public void close ()
   {
     try {
-    if (br != null)
-      br.close();
+    if (buff != null)
+      buff.close();
     }
     catch (java.io.IOException e)
     {
@@ -38,14 +38,14 @@ public class MusicReader {
   
   public String[] getSongData ()
   {
-    if (br == null)
+    if (buff == null)
       return null;
     
     String line = "";
 
     try 
     {
-         line = br.readLine();
+         line = buff.readLine();
     }
     catch (java.io.IOException e)
     {

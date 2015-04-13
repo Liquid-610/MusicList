@@ -1,7 +1,14 @@
-import java.util.Arrays;
+import java.util.*;
 
 public class MusicRunner
 {
+  // Strip off the first and last double quote and trim the rest
+  public static String clean (String input)
+  {
+    String Output = input.substring(1,input.length() - 1);
+    return Output;
+  }
+  
   public static void main (String[] args)
   {
     int count = 0;
@@ -12,12 +19,8 @@ public class MusicRunner
     String[] data = mr.getSongData();
     
     //Song song = new Song () {s0, s1,s2,s3,s4,s5,s6,s7,s8,s9};
-    ArrayList<MusicRunner> myArrayList = new ArrayList<MusicRunner>(10);
-    
-    for(int i = 0; i <= 10; i++)
-    {
-      System.out.println("{0}, {1}",s[i], s[i]);
-    }
+    //ArrayList<MusicRunner> myArrayList = new ArrayList<MusicRunner>(10);
+    ArrayList <Song> songs = new ArrayList <Song> ();
     
     // First line contains all the fields - We don't want to save this anywhere but we can
     // print it for now to see what information we have.
@@ -34,7 +37,11 @@ public class MusicRunner
       System.out.println(Arrays.toString(data));
       
       // Let's try to create a Song object
-      Song song = new Song(data[0], data[1]);  // data[0] is the artist and data[1] is the name
+      Song song = new Song(clean(data[0]), clean(data[1]), 1997, 0.3, "Notes here");  // data[0] is the artist and data[1] is the name
+
+      System.out.println(song.artist);
+      
+      //songs.add(song);
       
       count++;
       
